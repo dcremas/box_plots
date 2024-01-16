@@ -102,6 +102,11 @@ data_table = DataTable(source=source, columns=columns, width=800, height=600,
 desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width",
            margin=(10, 25, 10, 25))
 
+hyperlink_github = Div(
+    text="""<p><i>To see the full codebase for this interactive web-based visualization: </i><a href="https://github.com/dcremas/box_plots">Link to my github account</a></p>""",
+    width=800, height=25, margin=(10, 10, 10, 25)
+    )
+
 hyperlink_div = Div(
     text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
     width=400, height=25,
@@ -129,6 +134,7 @@ p_subregion.axis.major_label_text_font_size="8px"
 p_subregion.axis.axis_label_text_font_size="10px"
 
 curdoc().add_root(column(desc,
+                         hyperlink_github, 
                          hyperlink_div,
                          row(p_region, p_subregion, sizing_mode="inherit"),
                          button,
